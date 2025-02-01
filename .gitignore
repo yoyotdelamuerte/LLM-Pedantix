@@ -1,0 +1,27 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-error.log*
+dist/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+env/
+venv/
+ENV/
+.env
+
+# Docker
+docker-compose.override.yml
+
+# IDE et éditeurs
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Autres fichiers temporaires
+tmp/
