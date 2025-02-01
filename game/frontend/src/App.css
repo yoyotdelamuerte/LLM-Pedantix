@@ -1,9 +1,121 @@
+/* Style global et entête déjà présents */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: #f0f0f0;
+}
+
 .App {
-    text-align: center;
-    font-family: Arial, sans-serif;
-  }
-  
-  .App-header {
-    margin: 20px;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0e2a47, #1a4a71);
+}
+
+.App-header {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px 30px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.App-header h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+/* Affichage du titre à deviner */
+.question-title-display {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+/* Mots non encore trouvés : masqués (affichage en gris et sous forme de tirets) */
+.hidden-word {
+  color: #888;
+  margin-right: 5px;
+}
+
+/* Mots trouvés : affichés normalement */
+.revealed-word {
+  color: #fff;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+/* Extrait de la question */
+.question-extract {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  color: #ddd;
+}
+
+/* Lien vers Wikipédia */
+.question-link {
+  color: #ffce00;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.question-link:hover {
+  text-decoration: underline;
+}
+
+/* Formulaire de réponse */
+.answer-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.answer-input {
+  width: 80%;
+  padding: 10px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Boutons */
+.btn {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffce00;
+  color: #0e2a47;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 5px;
+  transition: background-color 0.2s;
+}
+
+.btn:hover {
+  background-color: #ffc107;
+}
+
+/* Feedback */
+.feedback {
+  font-size: 1.2em;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* Bouton pour nouvelle question */
+.new-question {
+  margin-top: 20px;
+}
+.App-footer {
+  margin-top: 20px;
+  text-align: center;
+}

@@ -38,7 +38,6 @@ app.post('/api/validate', (req, res) => {
     return res.status(400).json({ error: "Paramètres manquants" });
   }
   
-  // Comparaison simple en ignorant la casse et les espaces superflus.
   const normalize = str => str.trim().toLowerCase();
   const isValid = normalize(questionTitle) === normalize(userAnswer);
   
