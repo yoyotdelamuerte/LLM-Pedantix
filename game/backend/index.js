@@ -10,7 +10,6 @@ app.use(express.json());
 
 /**
  * Endpoint pour récupérer une question depuis Wikipédia.
- * Ici, nous utilisons l’API Wikipédia en récupérant un résumé de page aléatoire.
  */
 app.get('/api/question', async (req, res) => {
   try {
@@ -26,6 +25,24 @@ app.get('/api/question', async (req, res) => {
     console.error(error);
     res.status(500).json({ error: 'Erreur lors de la récupération de la question' });
   }
+});
+
+/**
+ * Endpoint pour valider la réponse de l'utilisateur.
+ * Ici, on compare la réponse utilisateur avec le titre de la page Wikipédia.
+ */
+app.post('/api/validate', (req, res) => {
+  const { questionTitle, userAnswer } = req.body;
+  
+  if (!questionTitle || !userAnswer) {
+    return res.status(400).json({ error: "Paramètres manquants" });
+  }
+  
+  // Comparaison simple en ignorant la casse et les espaces superflus.
+  const normalize = str => str.trim().toLowerCase();
+  const isValid = normalize(questionTitle) === normalize(userAnswer);
+  
+  res.json({ valid: isValid, correctAnswer: questionTitle });
 });
 
 app.listen(PORT, () => {
